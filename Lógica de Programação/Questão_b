@@ -1,0 +1,19 @@
+programa
+{
+	
+	funcao inicio()
+	{
+
+		real dolares
+		real cot
+		
+		escreva("Digite quantos dolares: ")
+		leia(dolares)
+		
+		escreva("Digite a cotação: ")
+		leia(cot)
+				
+		escreva("Valor em reais: ", (dolares*cot))
+		
+	}
+}
