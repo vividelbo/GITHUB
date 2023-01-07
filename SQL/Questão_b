@@ -1,18 +1,21 @@
 CREATE TABLE pessoa(
-	id_pe INTEGER NOT NULL,
-	nome_pe VARCHAR(200) NOT NULL,
-	cpf_pe VARCHAR(25) NOT NULL,
-	idade_pe DATE,
-	sexo_pe CHAR(1) NOT NULL,
-	PRIMARY KEY (id_pe)
+	id_pessoa INTEGER NOT NULL,
+	nome VARCHAR(200) NOT NULL,
+	cpf VARCHAR(25) NOT NULL,
+	idade DATE,
+	sexo CHAR(1) NOT NULL,
+	PRIMARY KEY (id_pessoa)
 );
 
 CREATE TABLE endereco(
 	id_end INTEGER NOT NULL,
-	tipo_end VARCHAR(10) NOT NULL,
-	logradouro_end VARCHAR(250) NOT NULL,
-	numero_end VARCHAR(10) NOT NULL,
-	complemento_end VARCHAR(100),
-	cep_end NUMERIC NOT NULL,
+	tipo VARCHAR(10) NOT NULL,
+	logradouro VARCHAR(250) NOT NULL,
+	numero VARCHAR(10) NOT NULL,
+	complemento VARCHAR(100),
+	cep NUMERIC NOT NULL,
+	cidade VARCHAR(250) NOT NULL,
+	estado CHAR(2) NOT NULL,
+	pessoa INTEGER NOT NULL,
 	PRIMARY KEY (id_end)
 );
