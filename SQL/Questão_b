@@ -1,21 +1,23 @@
-CREATE TABLE pessoa(
-	id_pessoa INTEGER NOT NULL,
+CREATE TABLE tb_pessoa(
+	pessoa_id SERIAL NOT NULL,
 	nome VARCHAR(200) NOT NULL,
 	cpf VARCHAR(25) NOT NULL,
 	idade DATE,
 	sexo CHAR(1) NOT NULL,
-	PRIMARY KEY (id_pessoa)
+	CONSTRAINT tb_pessoa_pk PRIMARY KEY (pessoa_id)
 );
 
-CREATE TABLE endereco(
-	id_end INTEGER NOT NULL,
-	tipo VARCHAR(10) NOT NULL,
-	logradouro VARCHAR(250) NOT NULL,
-	numero VARCHAR(10) NOT NULL,
-	complemento VARCHAR(100),
-	cep NUMERIC NOT NULL,
-	cidade VARCHAR(250) NOT NULL,
-	estado CHAR(2) NOT NULL,
-	pessoa INTEGER NOT NULL,
-	PRIMARY KEY (id_end)
+
+CREATE TABLE tb_endereco(
+  endereco_id SERIAL NOT NULL,
+  tipo VARCHAR(10) NOT NULL,
+  logradouro VARCHAR(250) NOT NULL,
+  numero VARCHAR(10) NOT NULL,
+  complemento VARCHAR(10),
+  cep NUMERIC NOT NULL,
+  cidade VARCHAR(250) NOT NULL,
+  estado CHAR(2) NOT NULL,
+  pessoa_id INT,
+  CONSTRAINT tb_endereco_pkey PRIMARY KEY (endereco_id),
+  CONSTRAINT tb_endereco_tb_pessoa_id_fkey FOREIGN KEY (pessoa_id) REFERENCES tb_pessoa (pessoa_id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION
 );
