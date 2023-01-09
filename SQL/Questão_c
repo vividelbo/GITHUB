@@ -1,1 +1,3 @@
-SELECT * FROM pessoa, endereco
+select tp.pessoa_id, tp.nome, tp.cpf, tp.idade, tp.sexo, te.tipo, te.logradouro, te.numero, te.complemento, te.cep, te.cidade, te.estado 
+from tb_pessoa tp
+inner join tb_endereco te on tp.pessoa_id = te.pessoa_id
